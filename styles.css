@@ -1,0 +1,310 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
+    user-select: none;
+}
+
+body {
+    overflow: hidden;
+}
+
+.section {
+    background-color: rgb(0, 0, 0);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 80px;
+    transition: 1.3s;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+
+
+header .circle-logo {
+    position: relative;
+    max-width: 150px;
+    right: 120px;
+    margin-left: 80px;
+}
+
+header ul {
+    display: flex;
+    left: -120px;
+}
+
+header ul li {
+    list-style: none;
+}
+
+header ul li a {
+    display: inline-block;
+    font-weight: 600;
+    margin-left: 30px;
+    text-decoration: none;
+    color:rgb(255, 255, 255);
+    margin-left: 50px;
+}
+
+
+.page-content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-items: center;
+    justify-content: space-between;
+}
+
+.page-content .text {
+    position: relative;
+    max-width: 500px;
+    margin-top: 5%;
+    
+}
+
+.page-content .text h2 {
+    font-size: 3.2em;
+    line-height: 1.25em;
+    color: rgb(50, 205, 50);
+    margin-top: 60px;
+    text-transform: uppercase;
+}
+
+#typewriter {
+    position: absolute;
+    top: -60px;
+    text-transform: uppercase;
+    color:  rgb(255, 255, 0);
+    margin-top: 60px;
+    font-size: 3.5em;
+}
+
+.page-content .text h2 span {
+    font-size: 1.6em;
+}
+
+.page-content .text p {
+    color: rgb(154, 205, 50);
+}
+
+.page-content .text a {
+    display: inline-block;
+    color: rgb(50, 205, 50);
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+.btn {
+    min-height: 40px;
+    color: rgb(255, 255, 0);
+    font-weight: 500;
+    font-size: 1em;
+    text-transform: uppercase;
+    margin-top: 25px;
+    margin-right: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn.left {
+    border-radius: none;
+    background-color: rgb(233, 124, 0);
+    border: rgb(233, 124, 0);
+    min-width: 200px;
+    text-align: center;
+}
+
+
+.btn.right {
+    border: 2px solid rgb(233, 124, 0);
+    background-color: transparent;
+    min-width: 200px;
+    text-align: center;
+}
+
+.page-content .image {
+    width: 450px;
+    display: flex;
+    justify-content: flex-end;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+}
+
+.cans {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    display: flex;
+    transform: translateX(-50%);
+}
+
+.cans li {
+    list-style: none;
+    display: inline-block;
+    transition: 300ms;
+}
+
+.cans li img {
+    cursor: pointer;
+    object-fit: contain;
+}
+
+/* ? Movimiento */
+.cans li:hover {
+    transform: translateY(-15px);
+}
+
+.cans li img {
+    max-width: 100px;
+}
+
+.icons {
+    position: absolute;
+    right: 15px;
+}
+
+.icons li {
+    list-style: none;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.icons li a {
+    display: inline-block;
+    filter: invert(1);
+    transform: scale(0.8);
+}
+
+
+/* ? Responsive Design */
+@media (width < 1000px) {
+    section {
+        padding: 50px;
+        padding-bottom: 150px;
+        height: 100vh;
+    }
+    header {
+        padding: 50px;
+    }
+    header .circle-logo {
+        position: relative;
+        max-width: 120px;
+        margin-left: 125px;
+    }
+
+    /* ? Menu */
+    header ul {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255, 255, 255);
+        z-index: 1;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: 0.2s;
+        visibility: hidden;
+        opacity: 0;
+    }
+    header ul.active {
+        visibility: visible;
+        opacity: 1;
+    }
+    header ul li a{
+        display: inline-block;
+        color: rgb(17, 17, 17);
+        font-weight: 400;
+        margin-left: 0;
+        text-decoration: none;
+        font-size: 2em;
+        margin: 10px 0;
+    }
+    header ul li a:hover{
+        color: green;
+    }
+    .menu {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        background: url(./img/open.png);
+        background-position: center;
+        background-size: 30px;
+        background-repeat: no-repeat;
+        z-index: 2;
+        cursor: pointer;
+    }
+    .menu.active {
+        background: url(./img/close.png);
+        background-position: center;
+        background-size: 25px;
+        background-repeat: no-repeat;
+        filter: invert(1);   /* ? aparece X */
+    }
+    /* ? Fin Menu */
+
+    .page-content {
+        flex-direction: column;
+        margin-top: 0;
+    }
+    .page-content .text {
+        position: relative;
+        max-width: 100%;
+        padding-right: 20px;
+        margin-top: 80px;
+    }
+    #typewriter {
+        font-size: 2em;
+    
+    }
+
+    .page-content .text h2 {
+        margin-top: 50px;
+        font-size: 1em;
+    }
+    .page-content .text a {
+        font-size: 14px;
+        padding: 0 15px;
+    }
+    .page-content .image-container {
+        width: 100%;
+        display: flex;
+        padding-right: 0;
+        margin-top: 50px;
+        margin-bottom: 30px;
+        justify-content: center;
+        align-items: center;
+    }
+    .page-content .image-container img {
+        max-width: 350px;
+    }
+    .cans li img {
+        max-width: 60px;
+    }
+    .social-network {
+        right: 20px;
+        width: 50px;
+        padding: 5px 0;
+        border-radius: 10px;
+        background: rgb(0, 0, 0, 0.1);
+    }
+}

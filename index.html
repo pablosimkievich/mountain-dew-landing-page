@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Mountain Dew Landing Page</title>
+  </head>
+  <body>
+    <section class="section">
+      <header>
+        <a href="#"
+          ><img
+            src="./img/mountain-dew-logo-circle.png"
+            alt="circle-logo"
+            class="circle-logo"
+        /></a>
+        <div class="menu" onclick="menuToggle()"></div>
+        <ul class="navbar">
+          <li class="nav-items"><a href="#">Home</a></li>
+          <li class="nav-items"><a href="#">Drink</a></li>
+          <li class="nav-items"><a href="#">News</a></li>
+          <li class="nav-items"><a href="#">Logistic</a></li>
+          <li class="nav-items"><a href="#">Mailbox</a></li>
+        </ul>
+      </header>
+
+      <div class="page-content">
+        <div class="text">
+          <h2 id="typewriter"></h2>
+          <h2><span>Mountain Dew</span></h2>
+          <p>
+            Mountain Dew is the only thing you need to refresh your summer:<br />
+            To drink alone, or with ice and lemon.
+          </p>
+          <button class="btn left">View All Products</button>
+          <button class="btn right">Buy Now !</button>
+        </div>
+
+        <div class="image-container">
+          <img
+            class="image mountain-dew"
+            src="/img/mountain-dew-black-can-2.png"
+          />
+        </div>
+      </div>
+
+      <ul class="cans">
+        <li>
+          <img
+            class="small-cans"
+            src="./img/mountain-dew-green-can.png"
+            alt="small-green-can"
+            onclick="changeImage('./img/mountain-dew-green-can.png');changeColor('darkgreen')"
+          />
+        </li>
+        <li>
+          <img
+            class="small-cans"
+            src="./img/mountain-dew-black-can-2.png"
+            alt="small-black-can"
+            onclick="changeImage('./img/mountain-dew-black-can-2.png');changeColor('black')"
+          />
+        </li>
+      </ul>
+
+      <ul class="icons">
+        <li class="social-network">
+          <a href="#"><img src="./img/twitter.png" alt="twitter" /></a>
+        </li>
+        <li class="social-network">
+          <a href="#"><img src="./img/instagram.png" alt="twitter" /></a>
+        </li>
+        <li class="social-network">
+          <a href="#"><img src="./img/facebook.png" alt="twitter" /></a>
+        </li>
+      </ul>
+    </section>
+
+    <script src="./script.js"></script>
+    <script src="./animations.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+      let typed = new Typed("#typewriter", {
+        strings: ["I like", "i want", "i dream with"],
+        cursorChar: "_",
+        startDelay: 500,
+        typeSpeed: 80,
+        backSpeed: 40,
+        loop: true,
+      });
+    </script>
+  </body>
+</html>
